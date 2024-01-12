@@ -10,3 +10,7 @@ spring:
     database: mysql
     database-platform: org.hibernate.dialect.MySQLDialect
     show-sql: true
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
