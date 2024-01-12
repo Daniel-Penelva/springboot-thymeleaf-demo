@@ -15,13 +15,19 @@
   </head>
   <body>
 
-    <h2 style="text-align: center;">Cadastro de Pessoa</h2>
+    <h2 style="text-align: center;">Cadastro de Estudante</h2>
 
-    <form th:action="@{/pessoa/cadastro}" th:object="${pessoa}" method="post" style="max-width: 600px; margin:0 auto;">
+    <form th:action="@{/estudante/cadastro}" th:object="${estudante}" method="post" style="max-width: 600px; margin:0 auto;">
       <div class="m-3">
         <div class="form-group row">
-          <label for="nome">Nome:</label>
-          <input type="text" id="nome" th:field="*{nome}" required>
+            <label for="matricula">Matrícula:</label>
+            <input type="text" id="matricula" th:field="*{matricula}" required>
+        </div>
+
+        <!-- Adicionando o cadastro de Pessoa ao Estudante -->
+        <div class="form-group row">
+            <label for="pessoaNome">Nome da Pessoa:</label>
+            <input type="text" id="pessoaNome" th:field="*{pessoa.nome}" required>
         </div>
 
         <div class="text-center p" style="padding-top: 10px;">
@@ -31,11 +37,11 @@
     </form>
 
     <div style="text-align: center;">
-      <h3><a th:href="@{/pessoa/listar}" style="color: red;">Listar Pessoas</a></h3>
+        <h3><a th:href="@{/pessoa/listar}" style="color: red;">Listar Estudantes</a></h3>
     </div>
 
     <div style="text-align: center;">
-      <h3><a th:href="@{/}" style="color: red;">Home</a></h3>
+        <h3><a th:href="@{/}" style="color: red;">Home</a></h3>
     </div>
 
     <!-- CDN Bootstrap Javascript -->
